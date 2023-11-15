@@ -59,17 +59,30 @@ function success(position) {
       // Check if data is available
       if (data) {
         // Display the weather card and update its content
+
+        // Show the weather card
         document.getElementById("weather-card").style.display = "block";
+
+        // Update city name
         document.getElementById("weather-name").innerHTML = data.name;
+
+        // Update current date on the weather card
         document.getElementById("weather-date").innerHTML =
           new Date().toDateString();
+
+        // Update temperature on the weather card
         document.getElementById("weather-temp").innerHTML =
           Math.floor(data.main.temp).toString() + "° C";
+
+        // Update humidity on the weather card
         document.getElementById("weather-humidity").innerHTML =
           data.main.humidity.toString() + " %";
+
+        // Update wind speed on the weather card
         document.getElementById("weather-wind").innerHTML =
           Math.floor(data.wind.speed).toString() + " Km/h";
       }
+
       // Image references from https://openweathermap.org/weather-conditions
     })
     .catch((error) => console.log("Cannot get weather at your location"));
